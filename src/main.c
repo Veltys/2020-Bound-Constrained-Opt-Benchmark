@@ -30,8 +30,11 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 			printf("\n Error: Cannot open input file for reading \n");
 		}
 
-		if(x == NULL)
+		if(x == NULL) {
 			printf("\nError: there is insufficient memory available!\n");
+
+			return -1;
+		}
 
 		for(k = 0; k < n; k++) {
 			fscanf(fpt, "%lf", &x[k]);
