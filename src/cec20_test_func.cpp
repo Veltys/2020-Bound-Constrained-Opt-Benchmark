@@ -414,7 +414,7 @@ void levy_func(double *x, double *f, int nx, double *Os, double *Mr, int s_flag,
 	double *w;
 	w = (double*) malloc(sizeof(double) * nx);
 
-	double sum1 = 0.0;
+	// double sum1 = 0.0;
 	for(i = 0; i < nx; i++) {
 		w[i] = 1.0 + (z[i] - 1.0) / 4.0;
 	}
@@ -440,7 +440,7 @@ void dixon_price_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Dixon and Price */
 		{
 	int i;
-	int j;
+	// int j;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); // shift and rotate
 	f[0] = 0;
 	double x1 = z[0];
@@ -548,7 +548,7 @@ void weierstrass_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Weierstrass's  */
 		{
 	int i, j, k_max;
-	double sum, sum2, a, b;
+	double sum, sum2 = 0, a, b;
 	a = 0.5;
 	b = 3.0;
 	k_max = 20;
@@ -1529,7 +1529,7 @@ void asyfunc(double *x, double *xasy, int nx, double beta) {
 
 void oszfunc(double *x, double *xosz, int nx) {
 	int i, sx;
-	double c1, c2, xx;
+	double c1, c2, xx = 0;
 	for(i = 0; i < nx; i++) {
 		if(i == 0 || i == nx - 1) {
 			if(x[i] != 0)

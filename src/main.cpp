@@ -12,7 +12,8 @@ void cec20_test_func(double*, double*, int, int, int);
 double *OShift, *M, *y, *z, *x_bound;
 int ini_flag = 0, n_flag, func_flag, *SS;
 
-void main() {
+int main(int argc __attribute__((unused)),
+		char *argv[] __attribute__((unused))) {
 	int i, j, k, n, m, func_num;
 	double *f, *x;
 	FILE *fpt;
@@ -33,7 +34,7 @@ void main() {
 			printf("\nError: there is insufficient memory available!\n");
 
 		for(k = 0; k < n; k++) {
-			fscanf(fpt, "%Lf", &x[k]);
+			fscanf(fpt, "%lf", &x[k]);
 			/*printf("%Lf\n",x[k]);*/
 		}
 
@@ -47,7 +48,7 @@ void main() {
 		for(k = 0; k < 1; k++) {
 			cec20_test_func(x, f, n, m, func_num);
 			for(j = 0; j < 2; j++) {
-				printf(" f%d(x[%d]) = %Lf,", func_num, j + 1, f[j]);
+				printf(" f%d(x[%d]) = %lf,", func_num, j + 1, f[j]);
 			}
 			printf("\n");
 		}
@@ -60,5 +61,7 @@ void main() {
 	free(M);
 	free(OShift);
 	free(x_bound);
+
+	return 0;
 }
 
