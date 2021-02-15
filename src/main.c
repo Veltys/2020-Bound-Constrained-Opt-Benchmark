@@ -12,8 +12,7 @@ void cec20_test_func(double*, double*, int, int, int);
 double *OShift, *M, *y, *z, *x_bound;
 int ini_flag = 0, n_flag, func_flag, *SS;
 
-int main(int argc __attribute__((unused)),
-		char *argv[] __attribute__((unused))) {
+int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused))) {
 	int i, j, k, n, m, func_num;
 	double *f, *x;
 	FILE *fpt;
@@ -25,6 +24,7 @@ int main(int argc __attribute__((unused)),
 	for(i = 0; i < 30; i++) {
 		func_num = i + 1;
 		sprintf(FileName, "input_data/shift_data_%d.txt", func_num);
+
 		fpt = fopen(FileName, "r");
 		if(fpt == NULL) {
 			printf("\n Error: Cannot open input file for reading \n");
@@ -35,14 +35,14 @@ int main(int argc __attribute__((unused)),
 
 		for(k = 0; k < n; k++) {
 			fscanf(fpt, "%lf", &x[k]);
-			/*printf("%Lf\n",x[k]);*/
+			// printf("%Lf\n",x[k]);
 		}
 
 		fclose(fpt);
 
 		for(j = 0; j < n; j++) {
 			x[1 * n + j] = 0.0;
-			/*printf("%Lf\n",x[1*n+j]);*/
+			// printf("%Lf\n",x[1*n+j]);
 		}
 
 		for(k = 0; k < 1; k++) {

@@ -349,7 +349,7 @@ void cec20_test_func(double *x, double *f, int nx, int mx, int func_num0) {
 
 void sphere_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Sphere */
-		{
+{
 	int i;
 	f[0] = 0.0;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
@@ -361,7 +361,7 @@ void sphere_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void ellips_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Ellipsoidal */
-		{
+{
 	int i;
 	f[0] = 0.0;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
@@ -372,7 +372,7 @@ void ellips_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void sum_diff_pow_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* sum of different power */
-		{
+{
 	int i;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); // shift and rotate
 	f[0] = 0.0;
@@ -388,7 +388,7 @@ void sum_diff_pow_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void zakharov_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* zakharov */
-		{
+{
 	int i;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); // shift and rotate
 	f[0] = 0.0;
@@ -406,7 +406,7 @@ void zakharov_func(double *x, double *f, int nx, double *Os, double *Mr,
 /* Levy function */
 void levy_func(double *x, double *f, int nx, double *Os, double *Mr, int s_flag,
 		int r_flag) /* Levy */
-		{
+{
 	int i;
 	f[0] = 0.0;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
@@ -438,7 +438,7 @@ void levy_func(double *x, double *f, int nx, double *Os, double *Mr, int s_flag,
 /* Dixon and Price */
 void dixon_price_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Dixon and Price */
-		{
+{
 	int i;
 	// int j;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); // shift and rotate
@@ -460,7 +460,7 @@ void dixon_price_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void bent_cigar_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Bent_Cigar */
-		{
+{
 	int i;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
 	f[0] = z[0] * z[0];
@@ -472,7 +472,7 @@ void bent_cigar_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void discus_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Discus */
-		{
+{
 	int i;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
 	f[0] = pow(10.0, 6.0) * z[0] * z[0];
@@ -483,7 +483,7 @@ void discus_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void dif_powers_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Different Powers */
-		{
+{
 	int i;
 	f[0] = 0.0;
 	sr_func(x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
@@ -496,7 +496,7 @@ void dif_powers_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void rosenbrock_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Rosenbrock's */
-		{
+{
 	int i;
 	double tmp1, tmp2;
 	f[0] = 0.0;
@@ -512,7 +512,7 @@ void rosenbrock_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void schaffer_F7_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Schwefel's 1.2  */
-		{
+{
 	int i;
 	double tmp;
 	f[0] = 0.0;
@@ -527,7 +527,7 @@ void schaffer_F7_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void ackley_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Ackley's  */
-		{
+{
 	int i;
 	double sum1, sum2;
 	sum1 = 0.0;
@@ -546,7 +546,7 @@ void ackley_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void weierstrass_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Weierstrass's  */
-		{
+{
 	int i, j, k_max;
 	double sum, sum2 = 0, a, b;
 	a = 0.5;
@@ -570,7 +570,7 @@ void weierstrass_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void griewank_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Griewank's  */
-		{
+{
 	int i;
 	double s, p;
 	s = 0.0;
@@ -587,7 +587,7 @@ void griewank_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Rastrigin's  */
-		{
+{
 	int i;
 	f[0] = 0.0;
 
@@ -600,7 +600,7 @@ void rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void step_rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Noncontinuous Rastrigin's  */
-		{
+{
 	int i;
 	f[0] = 0.0;
 	for(i = 0; i < nx; i++) {
@@ -617,7 +617,7 @@ void step_rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void schwefel_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Schwefel's  */
-		{
+{
 	int i;
 	double tmp;
 	f[0] = 0.0;
@@ -647,7 +647,7 @@ void schwefel_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void katsuura_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Katsuura  */
-		{
+{
 	int i, j;
 	double temp, tmp1, tmp2, tmp3;
 	f[0] = 1.0;
@@ -671,7 +671,7 @@ void katsuura_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void bi_rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Lunacek Bi_rastrigin Function */
-		{
+{
 	int i;
 	double mu0 = 2.5, d = 1.0, s, mu1, tmp, tmp1, tmp2;
 	double *tmpx;
@@ -740,7 +740,7 @@ void bi_rastrigin_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void grie_rosen_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Griewank-Rosenbrock  */
-		{
+{
 	int i;
 	double temp, tmp1, tmp2;
 	f[0] = 0.0;
@@ -764,7 +764,7 @@ void grie_rosen_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void escaffer6_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* Expanded Scaffer¡¯s F6  */
-		{
+{
 	int i;
 	double temp1, temp2;
 
@@ -785,8 +785,8 @@ void escaffer6_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void happycat_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* HappyCat, provdided by Hans-Georg Beyer (HGB) */
-		/* original global optimum: [-1,-1,...,-1] */
-		{
+/* original global optimum: [-1,-1,...,-1] */
+{
 	int i;
 	double alpha, r2, sum_z;
 	alpha = 1.0 / 8.0;
@@ -805,8 +805,8 @@ void happycat_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void hgbat_func(double *x, double *f, int nx, double *Os, double *Mr,
 		int s_flag, int r_flag) /* HGBat, provdided by Hans-Georg Beyer (HGB)*/
-		/* original global optimum: [-1,-1,...,-1] */
-		{
+/* original global optimum: [-1,-1,...,-1] */
+{
 	int i;
 	double alpha, r2, sum_z;
 	alpha = 1.0 / 4.0;
@@ -826,7 +826,7 @@ void hgbat_func(double *x, double *f, int nx, double *Os, double *Mr,
 
 void hf01(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 1  /F17 Hybrid Function 1 in cec2014*/
-		{
+{
 	int i, tmp, cf_num = 3;
 	double fit[3];
 	int G[3], G_nx[3];
@@ -868,7 +868,7 @@ void hf01(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf02(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 2 */
-		{
+{
 	int i, tmp, cf_num = 3;
 	double fit[3];
 	int G[3], G_nx[3];
@@ -906,7 +906,7 @@ void hf02(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf03(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 2 */
-		{
+{
 	int i, tmp, cf_num = 3;
 	double fit[3];
 	int G[3], G_nx[3];
@@ -946,7 +946,7 @@ void hf03(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf04(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 3 */
-		{
+{
 	int i, tmp, cf_num = 4;
 	double fit[4];
 	int G[4], G_nx[4];
@@ -986,7 +986,7 @@ void hf04(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf05(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) // hf5 in cec2014 F21 in cec2014
-		{
+{
 	int i, tmp, cf_num = 5;
 	double fit[5];
 	int G[5], G_nx[5];
@@ -1038,7 +1038,7 @@ void hf05(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 }
 void hf06(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 5 */
-		{
+{
 	int i, tmp, cf_num = 4;
 	double fit[4];
 	int G[4], G_nx[4];
@@ -1089,7 +1089,7 @@ void hf06(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf07(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 6 */
-		{
+{
 	int i, tmp, cf_num = 5;
 	double fit[5];
 	int G[5], G_nx[5];
@@ -1131,7 +1131,7 @@ void hf07(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf08(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 6 */
-		{
+{
 	int i, tmp, cf_num = 5;
 	double fit[5];
 	int G[5], G_nx[5];
@@ -1174,7 +1174,7 @@ void hf08(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf09(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 6 */
-		{
+{
 	int i, tmp, cf_num = 5;
 	double fit[5];
 	int G[5], G_nx[5];
@@ -1217,7 +1217,7 @@ void hf09(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 
 void hf10(double *x, double *f, int nx, double *Os, double *Mr, int *S,
 		int s_flag, int r_flag) /* Hybrid Function 6 */
-		{
+{
 	int i, tmp, cf_num = 6;
 	double fit[6];
 	int G[6], G_nx[6];
@@ -1483,7 +1483,7 @@ void rotatefunc(double *x, double *xrot, int nx, double *Mr) {
 
 void sr_func(double *x, double *sr_x, int nx, double *Os, double *Mr,
 		double sh_rate, int s_flag, int r_flag) /* shift and rotate */
-		{
+{
 	int i;
 	if(s_flag == 1) {
 		if(r_flag == 1) {
