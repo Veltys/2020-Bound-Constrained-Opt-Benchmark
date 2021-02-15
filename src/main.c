@@ -21,7 +21,7 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 	n = 10;
 	x = (double*) malloc(m * n * sizeof(double));
 	f = (double*) malloc(sizeof(double) * m);
-	for(i = 0; i < 30; i++) {
+	for(i = 0; i < 10; i++) {
 		func_num = i + 1;
 		sprintf(FileName, "input_data/shift_data_%d.txt", func_num);
 
