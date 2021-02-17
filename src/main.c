@@ -5,7 +5,7 @@
 // #include <WINDOWS.H>
 #include <stdio.h>
 #include <math.h>
-#include <malloc.h>
+#include <stdlib.h>
 
 void cec20_test_func(double*, double*, int, int, int);
 
