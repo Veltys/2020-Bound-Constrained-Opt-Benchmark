@@ -2,7 +2,7 @@
  * CEC20 Test Function Suite for Single Objective Bound Constrained Numerical Optimization
  */
 
-#include <WINDOWS.H>
+// #include <WINDOWS.H>
 #include <stdio.h>
 #include <math.h>
 #include <malloc.h>

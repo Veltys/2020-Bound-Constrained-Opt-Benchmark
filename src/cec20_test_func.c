@@ -2,7 +2,7 @@
  * CEC20 Test Function Suite for Single Objective Bound Constrained Numerical Optimization
  */
 
-#include <WINDOWS.H>
+// #include <WINDOWS.H>
 #include <stdio.h>
 #include <math.h>
 #include <malloc.h>
@@ -763,7 +763,7 @@ void grie_rosen_func(double *x, double *f, int nx, double *Os, double *Mr,
 }
 
 void escaffer6_func(double *x, double *f, int nx, double *Os, double *Mr,
-		int s_flag, int r_flag) /* Expanded Scaffer¡¯s F6  */
+		int s_flag, int r_flag) /* Expanded Scafferï¿½ï¿½s F6  */
 {
 	int i;
 	double temp1, temp2;
