@@ -33,7 +33,7 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 		if(x == NULL) {
 			printf("\nError: there is insufficient memory available!\n");
 
-			return -1;
+			return EXIT_FAILURE;
 		}
 
 		for(k = 0; k < n; k++) {
@@ -65,6 +65,6 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 	free(OShift);
 	free(x_bound);
 
-	return 0;
+	return EXIT_SUCCESS;
 }
 
