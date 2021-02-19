@@ -33,10 +33,10 @@ void cec20_bench(const size_t m, const size_t n, double *x) {
 	}
 
 	free(f);
-	free(y);
-	free(z);
-	free(M);
-	free(OShift);
-	free(x_bound);
+	// free(y);
+	// free(z);
+	// free(M);
+	// free(OShift);
+	// free(x_bound);
 }
 
