@@ -1,5 +1,3 @@
-#define D 10
-
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -10,7 +8,7 @@ double *OShift, *M, *y, *z, *x_bound; // Las variables globales hacen llorar al 
 int ini_flag = 0, n_flag, func_flag, *SS;
 
 double cec20_bench(const size_t m, const size_t n, double *x) {
-	unsigned short int i /*, j */;
+	// unsigned short int i;
 	unsigned short int func_num = 1;
 	double *f;
 
@@ -22,17 +20,14 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 		exit(EXIT_FAILURE);
 	}
 
-	for(i = 0; i < D; i++) {
-		cec20_test_func(x, f, n, m, func_num);
+	cec20_test_func(x, f, n, m, func_num);
 
-		/*
-		 for(j = 0; j < 2; j++) {
-		 printf(" f%d(x[%d]) = %lf,", func_num, j + 1, f[j]);
-		 }
-		 printf("\n");
-		 */
-
-	}
+	/*
+	 for(i = 0; i < 2; i++) {
+	 printf(" f%d(x[%d]) = %lf,", func_num, i + 1, f[i]);
+	 }
+	 printf("\n");
+	 */
 
 	free(f);
 	// free(y);
