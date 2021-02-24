@@ -14,7 +14,11 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 #ifdef VERBOSE
 	unsigned short int i;
 #endif
+
+	unsigned short int func_num;
 	double *f;
+
+	FILE *archivo;
 
 	f = (double*) malloc(sizeof(double) * m);
 
@@ -23,24 +27,33 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 
 		return NAN;
 	}
+	else if((archivo = fopen("func_num.txt", "r")) == NULL) {
+		printf("\nError: cannot load configuration file\n");
 
-	cec20_test_func(x, f, n, m, func_num);
+		return NAN;
+	}
+	else {
+		fscanf(archivo, "%hu", &func_num);
+
+		fclose(archivo);
+
+		cec20_test_func(x, f, n, m, func_num);
 
 #ifdef VERBOSE
-	for(i = 0; i < 2; i++) {
-		printf(" f%d(x[%d]) = %lf,", func_num, i + 1, f[i]);
-	}
+		for(i = 0; i < 2; i++) {
+			printf(" f%d(x[%d]) = %lf,", func_num, i + 1, f[i]);
+		}
 
-	printf("\n");
+		printf("\n");
 #endif
 
-	free(f);
-	// free(y);
-	// free(z);
-	// free(M);
-	// free(OShift);
-	// free(x_bound);
+		free(f);
+		// free(y);
+		// free(z);
+		// free(M);
+		// free(OShift);
+		// free(x_bound);
 
-	return f[2];
+		return f[2];
+	}
 }
-
