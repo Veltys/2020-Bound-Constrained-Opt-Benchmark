@@ -18,7 +18,7 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 
 	f = (double*) malloc(sizeof(double) * m);
 
-	if(x == NULL) {
+	if(f == NULL) {
 		printf("\nError: there is insufficient memory available!\n");
 
 		return NAN;
