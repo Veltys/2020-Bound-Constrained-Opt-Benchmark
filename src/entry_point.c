@@ -1,3 +1,5 @@
+// #define VERBOSE
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -8,8 +10,10 @@ double *OShift, *M, *y, *z, *x_bound; // Las variables globales hacen llorar al 
 int ini_flag = 0, n_flag, func_flag, *SS;
 
 double cec20_bench(const size_t m, const size_t n, double *x) {
-	// unsigned short int i;
-	unsigned short int func_num = 1;
+
+#ifdef VERBOSE
+	unsigned short int i;
+#endif
 	double *f;
 
 	f = (double*) malloc(sizeof(double) * m);
@@ -22,12 +26,13 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 
 	cec20_test_func(x, f, n, m, func_num);
 
-	/*
-	 for(i = 0; i < 2; i++) {
-	 printf(" f%d(x[%d]) = %lf,", func_num, i + 1, f[i]);
-	 }
-	 printf("\n");
-	 */
+#ifdef VERBOSE
+	for(i = 0; i < 2; i++) {
+		printf(" f%d(x[%d]) = %lf,", func_num, i + 1, f[i]);
+	}
+
+	printf("\n");
+#endif
 
 	free(f);
 	// free(y);
