@@ -17,7 +17,7 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 	if(x == NULL) {
 		printf("\nError: there is insufficient memory available!\n");
 
-		exit(EXIT_FAILURE);
+		return NAN;
 	}
 
 	cec20_test_func(x, f, n, m, func_num);
