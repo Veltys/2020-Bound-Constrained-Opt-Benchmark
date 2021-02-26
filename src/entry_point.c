@@ -30,6 +30,8 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 	else if((archivo = fopen("func_num.txt", "r")) == NULL) {
 		printf("\nError: cannot load configuration file\n");
 
+		free(f);
+
 		return NAN;
 	}
 	else {
