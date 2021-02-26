@@ -77,6 +77,9 @@ void cec20_test_func(double *x, double *f, int nx, int mx, int func_num0) {
 	if(func_num0 < 1 || func_num0 > 10) {
 		printf("\nError: Test function %d is not defined.\n", func_num0);
 	}
+	else {
+		func_num0 = 1;
+	}
 	// Transform the func_num to suite the codes
 	func_num = Func_num[func_num0 - 1];
 //     printf("\n Input func_num %d Running fun num%d  \n", func_num0, func_num);
@@ -763,7 +766,7 @@ void grie_rosen_func(double *x, double *f, int nx, double *Os, double *Mr,
 }
 
 void escaffer6_func(double *x, double *f, int nx, double *Os, double *Mr,
-		int s_flag, int r_flag) /* Expanded Scaffer¡¯s F6  */
+		int s_flag, int r_flag) /* Expanded Scafferï¿½ï¿½s F6  */
 {
 	int i;
 	double temp1, temp2;
