@@ -20,7 +20,7 @@ CC := gcc
 CFLAGS := -pedantic-errors -Wall -Wextra -fmessage-length=0 -I.
 
 DEBUG_PARAMS := -O0 -g3 -fPIC $(CFLAGS)
-RELEASE_PARAMS := -O3 $(CFLAGS)
+RELEASE_PARAMS := -O3 -fPIC $(CFLAGS)
 
 SRC_DIR := src
 
@@ -44,7 +44,7 @@ RELEASE_EXE_OBJS := $(patsubst %,$(RELEASE_SRC_DIR)/%,$(OBJ_EXE))
 all: $(DEBUG_DIR)/benchmark$(EXE_EXTENSION) $(DEBUG_DIR)/libbenchmark$(DLL_EXTENSION) $(RELEASE_DIR)/benchmark$(EXE_EXTENSION) $(RELEASE_DIR)/libbenchmark$(DLL_EXTENSION)
 
 $(DEBUG_DIR)/benchmark$(EXE_EXTENSION): $(DEBUG_EXE_OBJS)
-	$(CC) $? -o $@
+	$(CC) $? -o $@ -lm
 
 $(DEBUG_DIR)/libbenchmark$(DLL_EXTENSION): $(DEBUG_DLL_OBJS)
 	$(CC) -fPIC $? -shared -o $@
@@ -53,7 +53,7 @@ $(DEBUG_SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(DEBUG_PARAMS) -c $< -o $@
 
 $(RELEASE_DIR)/benchmark$(EXE_EXTENSION): $(RELEASE_EXE_OBJS)
-	$(CC) $? -o $@
+	$(CC) $? -o $@ -lm
 
 $(RELEASE_DIR)/libbenchmark$(DLL_EXTENSION): $(RELEASE_DLL_OBJS)
 	$(CC) -fPIC $? -shared -o $@
