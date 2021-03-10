@@ -9,16 +9,14 @@ void cec20_test_func(double*, double*, int, int, int);
 double *OShift, *M, *y, *z, *x_bound; // Las variables globales hacen llorar al niño Jesús
 int ini_flag = 0, n_flag, func_flag, *SS;
 
-double cec20_bench(const size_t m, const size_t n, double *x) {
+double cec20_bench(const size_t m, const size_t n, double *x,
+		const unsigned short int func_num) {
 
 #ifdef VERBOSE
 	unsigned short int i;
 #endif
 
-	unsigned short int func_num;
 	double *f;
-
-	FILE *archivo;
 
 	f = (double*) malloc(sizeof(double) * m);
 
@@ -27,18 +25,7 @@ double cec20_bench(const size_t m, const size_t n, double *x) {
 
 		return NAN;
 	}
-	else if((archivo = fopen("func_num.txt", "r")) == NULL) {
-		printf("\nError: cannot load configuration file\n");
-
-		free(f);
-
-		return NAN;
-	}
 	else {
-		fscanf(archivo, "%hu", &func_num);
-
-		fclose(archivo);
-
 		cec20_test_func(x, f, n, m, func_num);
 
 #ifdef VERBOSE
