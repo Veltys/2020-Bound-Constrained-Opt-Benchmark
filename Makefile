@@ -17,10 +17,10 @@ else
 endif
 
 CC := gcc
-CFLAGS := -pedantic-errors -Wall -Wextra -fmessage-length=0 -I.
+CFLAGS := -std=c99 -pedantic-errors -Wall -Wextra -fmessage-length=0 -I.
 
-DEBUG_PARAMS := -O0 -g3 -fPIC $(CFLAGS)
-RELEASE_PARAMS := -O3 -fPIC $(CFLAGS)
+DEBUG_PARAMS := -O0 -g3 $(CFLAGS)
+RELEASE_PARAMS := -O3 $(CFLAGS)
 
 SRC_DIR := src
 
@@ -47,7 +47,7 @@ $(DEBUG_DIR)/benchmark$(EXE_EXTENSION): $(DEBUG_EXE_OBJS)
 	$(CC) $? -o $@ -lm
 
 $(DEBUG_DIR)/libbenchmark$(DLL_EXTENSION): $(DEBUG_DLL_OBJS)
-	$(CC) -fPIC $? -shared -o $@
+	$(CC) $? -shared -o $@
 
 $(DEBUG_SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(DEBUG_PARAMS) -c $< -o $@
@@ -56,7 +56,7 @@ $(RELEASE_DIR)/benchmark$(EXE_EXTENSION): $(RELEASE_EXE_OBJS)
 	$(CC) $? -o $@ -lm
 
 $(RELEASE_DIR)/libbenchmark$(DLL_EXTENSION): $(RELEASE_DLL_OBJS)
-	$(CC) -fPIC $? -shared -o $@
+	$(CC) $? -shared -o $@
 
 $(RELEASE_SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(RELEASE_PARAMS) -c $< -o $@
