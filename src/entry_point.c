@@ -6,11 +6,10 @@
 
 void cec20_test_func(double*, double*, int, int, int);
 
-double *OShift, *M, *y, *z, *x_bound; // Las variables globales hacen llorar al niño Jesús
+double *OShift, *M, *y, *z, *x_bound;  // Las variables globales hacen llorar al niño Jesús
 int ini_flag = 0, n_flag, func_flag, *SS;
 
-double cec20_bench(const size_t m, const size_t n, double *x,
-		const unsigned short int func_num) {
+double cec20_bench(const size_t m, const size_t n, double *x, const unsigned short int func_num) {
 
 #ifdef VERBOSE
 	unsigned short int i;
