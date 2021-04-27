@@ -19,7 +19,7 @@ endif
 CC := gcc
 CFLAGS := -std=c99 -pedantic-errors -Wall -Wextra -fmessage-length=0 -I.
 
-DEBUG_PARAMS := -O0 -g3 $(CFLAGS)
+DEBUG_PARAMS := -DLOG -O0 -g3 $(CFLAGS)
 RELEASE_PARAMS := -O3 $(CFLAGS)
 
 SRC_DIR := src
@@ -31,7 +31,7 @@ RELEASE_DIR := Release
 RELEASE_SRC_DIR := $(RELEASE_DIR)/$(SRC_DIR)
 
 OBJ_DLL := cec20_test_func.o entry_point.o
-OBJ_EXE := cec20_test_func.o main.o
+OBJ_EXE := cec20_test_func.o entry_point.o main.o
 
 DEBUG_DLL_OBJS := $(patsubst %,$(DEBUG_SRC_DIR)/%,$(OBJ_DLL))
 DEBUG_EXE_OBJS := $(patsubst %,$(DEBUG_SRC_DIR)/%,$(OBJ_EXE))
