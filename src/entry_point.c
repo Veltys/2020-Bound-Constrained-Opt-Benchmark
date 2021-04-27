@@ -39,7 +39,7 @@ void export(FILE *dest, char *text, ...) {
 }
 #endif //  defined(VERBOSE) || defined(LOG)
 
-double cec20_bench(const size_t m, const size_t n, double *x, const unsigned short int func_num) {
+double* cec20_bench(const size_t m, const size_t n, double *x, const unsigned short int func_num) {
 
 	double *f;
 
@@ -67,7 +67,7 @@ double cec20_bench(const size_t m, const size_t n, double *x, const unsigned sho
 	if(log == NULL) {
 		printf("Error: Cannot open file <%s>\n", filename);
 
-		return NAN;
+		return NULL;
 	}
 	else  // No "{", it's intentional
 #endif // LOG
@@ -81,7 +81,7 @@ double cec20_bench(const size_t m, const size_t n, double *x, const unsigned sho
 		fclose(log);
 #endif // defined(VERBOSE) || defined(LOG)
 
-		return NAN;
+		return NULL;
 	}
 	else {
 
@@ -125,13 +125,13 @@ double cec20_bench(const size_t m, const size_t n, double *x, const unsigned sho
 		fclose(log);
 #endif // LOG
 
-		free(f);
+		// free(f);
 		// free(y);
 		// free(z);
 		// free(M);
 		// free(OShift);
 		// free(x_bound);
 
-		return f[2];
+		return f;
 	}
 }
