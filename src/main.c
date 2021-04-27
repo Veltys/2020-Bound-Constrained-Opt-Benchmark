@@ -13,7 +13,7 @@ double *OShift, *M, *y, *z, *x_bound;
 int ini_flag = 0, n_flag, func_flag, *SS;
 
 int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused))) {
-	int i, j, k, n, m, func_num;
+	int i, j, n, m, func_num;
 	double *f, *x;
 	FILE *fpt;
 	char FileName[30];
@@ -21,6 +21,7 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 	n = 10;
 	x = (double*) malloc(m * n * sizeof(double));
 	f = (double*) malloc(sizeof(double) * m);
+
 	for(i = 0; i < 30; i++) {
 		func_num = i + 1;
 		sprintf(FileName, "input_data/shift_data_%d.txt", func_num);
@@ -36,8 +37,8 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 			return EXIT_FAILURE;
 		}
 
-		for(k = 0; k < n; k++) {
-			fscanf(fpt, "%lf", &x[k]);
+		for(j = 0; j < n; j++) {
+			fscanf(fpt, "%lf", &x[j]);
 			// printf("%Lf\n",x[k]);
 		}
 
@@ -48,15 +49,14 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 			// printf("%Lf\n",x[1*n+j]);
 		}
 
-		for(k = 0; k < 1; k++) {
-			cec20_test_func(x, f, n, m, func_num);
+		cec20_test_func(x, f, n, m, func_num);
 			for(j = 0; j < 2; j++) {
-				printf(" f%d(x[%d]) = %lf,", func_num, j + 1, f[j]);
-			}
-			printf("\n");
+			printf(" f%d(x[%d]) = %lf,", func_num, j + 1, f[j]);
 		}
+		printf("\n");
 
 	}
+
 	free(x);
 	free(f);
 	free(y);
