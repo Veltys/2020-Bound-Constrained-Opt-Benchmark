@@ -50,7 +50,7 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 		}
 
 		cec20_test_func(x, f, n, m, func_num);
-			for(j = 0; j < 2; j++) {
+		for(j = 0; j < m; j++) {
 			printf(" f%d(x[%d]) = %lf,", func_num, j + 1, f[j]);
 		}
 		printf("\n");
