@@ -10,7 +10,11 @@ int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 
 	const unsigned short int func_num = 1;
 
-	cec20_bench(m, n, x, func_num);
+	double *res;
+
+	res = cec20_bench(m, n, x, func_num);
+
+	free_array(res);
 
 	return EXIT_SUCCESS;
 }

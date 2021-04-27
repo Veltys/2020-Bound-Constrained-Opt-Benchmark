@@ -3,4 +3,6 @@
 
 double* cec20_bench(const size_t m, const size_t n, double *x, const unsigned short int func_num);
 
+void free_array(double *array);
+
 #endif // _ENTRY_POINT_H
