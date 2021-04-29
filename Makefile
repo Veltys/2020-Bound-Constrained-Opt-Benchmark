@@ -19,7 +19,7 @@ endif
 CC := gcc
 CFLAGS := -std=c99 -pedantic-errors -Wall -Wextra -fmessage-length=0 -I.
 
-DEBUG_PARAMS := -DLOG -O0 -g3 $(CFLAGS)
+DEBUG_PARAMS := -O0 -g3 $(CFLAGS)
 RELEASE_PARAMS := -O3 $(CFLAGS)
 
 SRC_DIR := src
