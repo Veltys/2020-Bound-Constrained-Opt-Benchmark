@@ -27,7 +27,7 @@ void schwefel_func(double*, double*, int, double*, double*, int, int); /* Schwef
 void katsuura_func(double*, double*, int, double*, double*, int, int); /* Katsuura */
 void bi_rastrigin_func(double*, double*, int, double*, double*, int, int); /* Lunacek Bi_rastrigin */
 void grie_rosen_func(double*, double*, int, double*, double*, int, int); /* Griewank-Rosenbrock  */
-void escaffer6_func(double*, double*, int, double*, double*, int, int); /* Expanded Scaffer¡¯s F6  */
+void escaffer6_func(double*, double*, int, double*, double*, int, int); /* Expanded Scaffer's F6  */
 void step_rastrigin_func(double*, double*, int, double*, double*, int, int); /* Noncontinuous Rastrigin's  */
 void happycat_func(double*, double*, int, double*, double*, int, int); /* HappyCat */
 void hgbat_func(double*, double*, int, double*, double*, int, int); /* HGBat  */
@@ -766,7 +766,7 @@ void grie_rosen_func(double *x, double *f, int nx, double *Os, double *Mr,
 }
 
 void escaffer6_func(double *x, double *f, int nx, double *Os, double *Mr,
-		int s_flag, int r_flag) /* Expanded Scaffer��s F6  */
+		int s_flag, int r_flag) /* Expanded Scaffer's F6  */
 {
 	int i;
 	double temp1, temp2;
