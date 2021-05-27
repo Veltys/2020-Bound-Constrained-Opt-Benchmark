@@ -75,9 +75,9 @@ void cec20_test_func(double *x, double *f, int nx, int mx, int func_num0) {
 	int cf_num = 10, i, j, func_num;
 	int Func_num[] = { 1, 2, 3, 7, 4, 16, 6, 22, 24, 25 };
 	if(func_num0 < 1 || func_num0 > 10) {
-		printf("\nError: Test function %d is not defined.\n", func_num0);
-	}
-	else {
+		printf("\nError: Test function %d is not defined. ", func_num0);
+		printf("Using first function instead.\n");
+
 		func_num0 = 1;
 	}
 	// Transform the func_num to suite the codes
