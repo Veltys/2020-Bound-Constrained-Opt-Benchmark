@@ -1,5 +1,14 @@
-// #define VERBOSE
-// #define LOG
+/**
+ * @file		entry_point.c
+ * @brief		Contiene las funciones necesarias como punto de entrada de la biblioteca de tests del CEC 2020
+ *
+ * @author		Rafael Carlos Méndez Rodríguez (i82meror)
+ * @date		27/04/2021
+ * @version		2.0.0
+ */
+
+// #define VERBOSE						// Constante del preprocesador para regular la salida por pantalla de los datos de diagnóstico
+// #define LOG							// Constante del preprocesador para regular la salida por archivo de registro de los datos de diagnóstico
 
 #ifdef LOG
 #define LOG_FILE_NAME "benchmark"
@@ -16,11 +25,19 @@
 
 void cec20_test_func(double*, double*, int, int, int);
 
-double *OShift, *M, *y, *z, *x_bound;  // Las variables globales hacen llorar al niño Jesús
+double *OShift, *M, *y, *z, *x_bound;	// Las variables globales hacen llorar al niño Jesús
 int ini_flag = 0, n_flag, func_flag, *SS;
 
 #if defined(VERBOSE) || defined(LOG)
 void export(FILE *dest, char *text, ...) {
+	/**
+	 * Función export
+	 * Muestra por pantalla, registra en un archivo o ambos el texto dado
+	 *
+	 * @param		dest		FILE *						Ruta del archivo de registro (NULL si no es necesario)
+	 * @param		text		char *						Texto a registrar
+	 * @param		...										Resto de parámetros para formato tipo printf
+	 */
 
 	va_list args;
 
@@ -40,6 +57,17 @@ void export(FILE *dest, char *text, ...) {
 #endif //  defined(VERBOSE) || defined(LOG)
 
 double* cec20_bench(const size_t m, const size_t n, double *x, const unsigned short int func_num) {
+	/**
+	 * Función cec20_bench
+	 * Actúa como punto de entrada de la biblioteca del benchmark, realizando todas las tareas necesarias para la inicialización, llamada y recogida de resultados
+	 *
+	 * @param		m			const size_t				Número de elementos a testear
+	 * @param		n			const size_t				Dimensiones del espacio de búsqueda
+	 * @param		x			double *					Vector de elementos
+	 * @param		func_num	const unsigned short int	Número de función que se empleará
+	 *
+	 * @return					double *					Vector de resultados
+	 */
 
 	double *f;
 
@@ -137,5 +165,12 @@ double* cec20_bench(const size_t m, const size_t n, double *x, const unsigned sh
 }
 
 void free_array(double *array) {
+	/**
+	 * Función free_array
+	 * Libera la memoria del vector que recibe
+	 *
+	 * @param		array		double *					Vector a liberar
+	 */
+
 	free(array);
 }
