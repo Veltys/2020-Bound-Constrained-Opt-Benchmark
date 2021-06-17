@@ -29,7 +29,7 @@ double *OShift, *M, *y, *z, *x_bound;	// Las variables globales hacen llorar al 
 int ini_flag = 0, n_flag, func_flag, *SS;
 
 #if defined(VERBOSE) || defined(LOG)
-void export(FILE *dest, char *text, ...) {
+void export(FILE *dest __attribute__((unused)), char *text, ...) {
 	/**
 	 * Función export
 	 * Muestra por pantalla, registra en un archivo o ambos el texto dado
